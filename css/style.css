@@ -818,6 +818,18 @@ h3.my-profession
     max-width: 50%;
    
 }
+ .contact  .contact-form  .col-7
+{
+    flex: 0 0 17%;
+    max-width: 17%;
+   
+}
+.contact  .contact-form  .col-8
+{
+    flex: 0 0 33%;
+    max-width: 33%;
+   
+}
 .contact  .contact-form  .col-12
 {
     flex: 0 0 100%;
