@@ -57,7 +57,7 @@
                                 With my expertise in machine learning, data science, and AI, I am currently engaged in
                                 developing various projects.
                             </p>
-                            <a href="images/Gyanendra_Resume.pdf" class="btn">Download CV</a>
+                            <a href="images/Gyanendra_Singh_Resume.pdf" class="btn">Download Resume</a>
                         </div>
                         <div class="home-img padd-15">
                             <img src="images/main.jpg" alt="">
@@ -551,7 +551,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <a href="https://www.codechef.com/users/gyanendra1999">
+                                    <a href="https://www.codechef.com/users/gyanendra2003">
                                         <img src="images/codechef.png" alt="">
                                         <p>CodeChef Profile</p>
                                     </a>
@@ -730,7 +730,7 @@
                             <div class="icon"><i class="fab fa-microsoft fa-envelope" aria-hidden="true"></i></div>
                         </a>
                         <h4>Outlook</h4>
-                        <p>0201csai112@niet.co.in</p>s
+                        <p>0201csai112@niet.co.in</p>
                     </div>
                     <div class="contact-info-item padd-15">
                         <a href="https://www.instagram.com/gyanendra6792/">
@@ -1031,21 +1031,30 @@
         // Listen for input changes in the phone input
         phoneInput.addEventListener('input', () => {
             const selectedCountryCode = countryCodeSelect.value;
-            const enteredPhone = phoneInput.value.replace(/\D/g, ''); // Non-digit characters remove karne ke liye
+            const enteredPhone = phoneInput.value.replace(/\D/g, ''); // Remove non-digit characters
             const limit = countryCodeLimits[selectedCountryCode];
         
+            clearError(); // Clear any existing error messages
+        
             if (limit) {
-                if (enteredPhone.length === limit) {
-                    phoneInput.value = enteredPhone.substring(0, limit);
-                    console.log("if statement");
-                } else if (enteredPhone.length < limit) {
+                if (enteredPhone.length < limit) {
                     showError(`Phone number should have at least ${limit} digits.`);
-                    console.log("else ssajusacu");
+                } else if (enteredPhone.length > limit) {
+                    phoneInput.value = enteredPhone.substring(0, limit);
+                    showError(`Phone number should not exceed ${limit} digits.`);
                 }
             }
         
             showErrorIfExceedsLimit();
         });
+        
+        // Add this function to clear error messages
+        function clearError() {
+            msg.innerHTML = '';
+        }
+        
+        
+        
     
         form.addEventListener('submit', e => {
             e.preventDefault();

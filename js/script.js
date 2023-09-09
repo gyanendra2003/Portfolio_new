@@ -81,7 +81,7 @@
 // Typing Animation
 var typed = new Typed(".typing",
     {
-        strings: ["", "Machine Learning Engineer", "Data Scientist", "Data Analytics", "Java Developer"],
+        strings: ["", "Machine Learning Engineer", "Data Scientist", "Data Analytics"],
         typeSpeed: 100,
         BackSpeed: 60,
         loop: true
